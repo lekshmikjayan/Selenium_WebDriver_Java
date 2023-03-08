@@ -11,5 +11,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/leksh/Downloads/testng-6.9.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
