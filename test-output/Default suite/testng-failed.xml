@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcase.FirstTestFw">
+      <class name="crossbrowser.Crossbrowsertesting">
         <methods>
-          <include name="teardown"/>
-          <include name="LoginTest" invocation-numbers="0 1 2"/>
-          <include name="setup"/>
+          <include name="home"/>
+          <include name="end"/>
+          <include name="initial"/>
         </methods>
-      </class> <!-- testcase.FirstTestFw -->
+      </class> <!-- crossbrowser.Crossbrowsertesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

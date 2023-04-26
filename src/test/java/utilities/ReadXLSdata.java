@@ -3,6 +3,7 @@ package utilities;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -10,18 +11,19 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.testng.annotations.DataProvider;
 
 public class ReadXLSdata {
 public static void main (String[]args) throws EncryptedDocumentException, IOException {
-	ReadXLSdata red = new ReadXLSdata();
-	red.getData("Sheet1");
+	
 }
-
-public String[][] getData(String excelsheet) throws EncryptedDocumentException, IOException {
+@DataProvider(name="newdata")
+public String[][] getData(Method m) throws EncryptedDocumentException, IOException {
+	String excelSheetName = m.getName();
 	File f = new File (System.getProperty("user.dir") + "\\src\\test\\resources\\testdata\\testdata.xlsx");
 	FileInputStream fis = new FileInputStream(f);
-	Workbook wb = WorkbookFactory.create(fis); 
-	Sheet sheetname = wb.getSheet(excelsheet);
+	Workbook wb = WorkbookFactory.create(fis); //creating fileinpstream
+	Sheet sheetname = wb.getSheet(excelSheetName);//
 	
 	int totalrows = sheetname.getLastRowNum();
 	System.out.println(totalrows);

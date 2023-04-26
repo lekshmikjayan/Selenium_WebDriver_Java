@@ -5,12 +5,13 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.Bastest;
+import utilities.ReadXLSdata;
 
 
 
 public class FirstTestFw extends Bastest{
 
-	@Test(dataProvider="testdata")
+	@Test(dataProviderClass=ReadXLSdata.class, dataProvider="newdata")
 	public static void LoginTest(String username, String password) throws InterruptedException {
 
 		System.out.println("Clicked successfully..!!");
@@ -23,14 +24,6 @@ public class FirstTestFw extends Bastest{
 		Thread.sleep(2000);	
 	}
 
-	@DataProvider(name="testdata")
-	public Object[][] tdata(){
-		return new Object[][] {
-			{"Wafqw","Qgegeg"},
-			{"QWFgw","Qt3tg"},
-			{"R2rfWQF", "WFQWgegqgh"},
-			{"lekshmikjayan27@gmail.com", "zohocrm@98"}
-			
-	};
-}
+	
+	
 }
